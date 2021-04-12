@@ -7,14 +7,10 @@ import bookmarksView from './views/bookmarksView.js';
 import paginationView from './views/paginationView.js';
 import addRecipeView from './views/addRecipeView.js';
 
-// console.log(icons);
 import 'core-js/stable'; //polyfilling a lot
 import 'regenerator-runtime/runtime'; //polyfilling async await
 // import { classof } from 'core-js/core/object';
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
@@ -29,7 +25,6 @@ const controlRecipes = async function () {
 
     // 1. loading recipe
     await model.loadRecipe(id);
-    // const { recipe } = model.state;
 
     //2. rendering recipe
     recipeView.render(model.state.recipe);
@@ -49,8 +44,7 @@ const controlSearchResults = async function () {
     }
     //2. Load search results
     await model.loadSearchResults(query);
-    // console.log(model.state.search.results);
-    // console.log(model.getSearchResultsPage(1));
+
     // 3. render result
     resultsView.render(model.getSearchResultsPage());
 

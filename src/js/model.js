@@ -38,7 +38,6 @@ export const loadRecipe = async function (id) {
     } else {
       state.recipe.bookmarked = false;
     }
-    // console.log(state.recipe);
   } catch (err) {
     //We have to get error to the View module
 
@@ -60,7 +59,6 @@ export const loadSearchResults = async function (query) {
       };
     });
     state.search.page = 1;
-    // console.log(state.search.results);
   } catch (err) {
     console.error(`${err} 💣 💣 💣 `);
     throw err;
